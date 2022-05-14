@@ -1,0 +1,1 @@
+iphone.addEventListener('click')

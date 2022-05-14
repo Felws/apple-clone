@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Apple</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <img class="img-nav" src="imagens/logo-apple.png" alt="Logo da Apple">
+            <div class="item-nav"> Loja </div>
+            <div class="item-nav"> Mac</div>
+            <div class="item-nav"> Ipad</div>
+            <div class="item-nav"> Iphone</div>
+            <div class="item-nav"> Watch</div>
+            <div class="item-nav"> Airpods</div>
+            <div class="item-nav"> TV e Casa</div>
+            <div class="item-nav"> Só na Apple</div>
+            <div class="item-nav"> Acessórios</div>
+            <div class="item-nav"> Suporte</div>
+            <img class="img-nav" src="imagens/lupa.png" alt="buscar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart img-nav" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        </nav>
+    </header>
+
+
+
+<!-- Div UNICEF 
+<div class="unicef">
+    <img src="Imagens/unicef.png">
+    <p id="texto-unicef">Faça uma doação pelas famílias afetadas pela guerra na Ucrânia.</p>
+    <svg id="icon-unicef" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+      </svg>
+</div>
+-->
+    <main>
+        <!-- DIV IPHONE-->
+        <div id="iphone">
+            <h1>iPhone 13 Pro</h1>
+                <h2>É todo Pro.</h2>
+                    <section id="iphone-options">
+                        <p>Saiba mais ></p>
+                        <p>Comprar ></p>
+                    </section>
+            <img id="iphone-img" src="imagens/iphone.png" class="rellax-parallax" data-rellax-speed="0.8">
+            <span class="rellax-parallax" data-rellax-speed="0.30"></span>
+        </div>
+
+
+        <!-- Novo Iphone -->
+
+        <div class="new-iphone">
+            <h2>Novo</h2>
+            <h1>iPhone <span id="iphone-se">SE</span></h1>
+            <p>Tão poderoso. Tão ao seu alcance.</p>
+            <section>
+                <p>Saiba mais ></p>
+                <p>Comprar ></p>
+            </section>
+            <img id="iphone-img" src="Imagens/iphone-se.png" class="rellax-parallax" data-rellax-speed="0.8>
+        </div>
+
+
+        <!-- MOSAIC-->
+
+        <div id="mosaic rellax-parallax" data-rellax-speed="0.8">
+            <div class="row">
+                 <span class="divisor"></span>
+
+                <section id="studio-display">
+                    <h1>Studio Display</h1>
+                    <h2>Paixão à primeira vista</h2>
+                    <div>
+                        <p>Saiba mais ></p>
+                        <p>Comprar ></p>
+                    </div>
+                    <img class="rellax-parallax" data-rellax-speed="0.2" src="imagens/studio-display.png" alt="studio display">
+                </section>
+
+                <section id="ipad">
+                    <div id='ipad-img' class="rellax-parallax" data-rellax-speed="0.5"></div>
+                    <h1>iPad <span>air</span></h1>
+                    <h2>Cor e potência no ar.</h2>
+                </section>
+            </div>
+            
+            <div class="row">
+                <span class="divisor"></span>
+                <section id="fit-apple">
+
+                </section>
+                <section id="apple-watch">
+                    <div></div>
+                </section>
+            </div>
+        </div>
+
+
+
+        <!--Biblioteca Rellax js (Parallax)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.js"></script>
+
+        <script>
+            var rellax = new Rellax('.rellax-parallax')
+
+        </script>
+    </main>
+</body>
+</html>

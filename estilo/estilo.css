@@ -187,7 +187,7 @@ main {
     background-color: var(--branco-fundo);
     align-items: center;
     font-family: var(--font-apple);
-    padding: 38px 0 40px 0;
+    padding: 30px 0 40px 0;
     border-bottom: 12px solid white;
 }
 
@@ -207,6 +207,13 @@ main {
     border-radius: 10px;
     position: relative;
     bottom: 8px;
+}
+
+#new-iphone-img{
+    width: 500px;
+    height: 500px;
+    margin: 45px 0 0 0;
+
 }
 
 .new-iphone > h1 {
@@ -237,28 +244,15 @@ main {
     font-weight: 200;
 }
 
-.divisor-bottom{
-    width: 100%;
-    height: 20px;
-    background-color: black;
-}
-
-#mosaic {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 1120px;
-}
 
 .row{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 97.9vw;
     height: 560px;
     border-bottom: 12px solid white;
     border-left: 12px solid white;
-
-
+    view-heig
 }
 
 
@@ -319,6 +313,7 @@ main {
     align-items: center;
     background-color: black;
     z-index: 1;
+    border-right: 12px solid white;
 }
 
 #ipad-img{
@@ -367,11 +362,19 @@ main {
     /* left: 235px; */
 }
 
+.row2{
+    display: flex;
+    flex-direction: row;
+    width: 97.9vw;
+    height: 560px;
+    border-bottom: 12px solid white;
+    border-left: 12px solid white;
+}
+
 #fit-apple{
     width: 50%;
     height: auto;
     background-color: blue;
-    z-index: 1;
     border-right: 12px solid white;
 }
 
@@ -379,5 +382,5 @@ main {
     width: 50%;
     height: auto;
     background-color: red;
-    z-index: 1;
+    border-right: 12px solid white;
 }

@@ -6,7 +6,7 @@
     <title>Apple</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="estilo/estilo.css">
-    <script src='main.js'></script>
+    <script src='javascript/script.js'></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 <body>
@@ -42,31 +42,33 @@
 </div>
 -->
     <main>
-        <!-- DIV IPHONE-->
-        <div id="iphone">
-            <h1>iPhone 13 Pro</h1>
-                <h2>É todo Pro.</h2>
-                    <section id="iphone-options">
-                        <p>Saiba mais ></p>
-                        <p>Comprar ></p>
-                    </section>
-            <img id="iphone-img" src="imagens/iphone.png" class="rellax-parallax" data-rellax-speed="0.8">
-            <span class="rellax-parallax" data-rellax-speed="0.3"></span>
-        </div>
-
-
         <!-- Novo Iphone -->
 
-        <div class="new-iphone rellax-parallax" data-rellax-speed="0">
+        <div  class="new-iphone rellax-parallax" data-rellax-speed="0">
             <h2>Novo</h2>
             <h1>iPhone <span id="iphone-se">SE</span></h1>
             <p>Tão poderoso. Tão ao seu alcance.</p>
-            <section>
+            <section >
                 <p>Saiba mais ></p>
                 <p>Comprar ></p>
             </section>
-            <img id="new-iphone-img" src="Imagens/iphone-se.png" class="rellax-parallax" data-rellax-speed="0.8">
+            <img  id="new-iphone-img" src="Imagens/iphone-se.png" class="rellax-parallax" data-rellax-speed="1.1" data-rellax-percentage="0.1">
         </div>
+
+                <!-- DIV IPHONE-->
+                <div id="iphone">
+                    <h1 >iPhone 13 Pro</h1>
+                        <h2>É todo Pro.</h2>
+                            <section class="scroll" data-rateY="3" data-rateX="2" data-direction="horizontal" id="iphone-options">
+                                <p>Saiba mais ></p>
+                                <p>Comprar ></p>
+                            </section>
+                        <div id="iphone-img" class="rellax-parallax" data-rellax-speed="0.3">
+                            <img id="iphone-img1"  src="imagens/iphone.png">
+                            <img  id="stars" src="imagens/iphone2.png" >
+                        </div>
+                        <span class="rellax-parallax" data-rellax-speed="0.3"></span>
+                </div>
 
 
 
@@ -83,8 +85,8 @@
                     <img class="rellax-parallax" data-rellax-speed="0.2" src="imagens/studio-display.png" alt="studio display">
                 </section>
 
-                <section id="ipad">
-                    <div id='ipad-img' class="rellax-parallax" data-rellax-speed="0.5"></div>
+                <section id="ipad" >
+                    <div data-scroll id='ipad-img'></div>
                     <h1>iPad <span>air</span></h1>
                     <h2>Cor e potência no ar.</h2>
                 </section>
@@ -104,11 +106,23 @@
 
         <!--Biblioteca Rellax js (Parallax)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.js"></script>
+        <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
 
-        <script>
-            var rellax = new Rellax('.rellax-parallax')
+     <script>
+        var rellax = new Rellax('.rellax-parallax')
 
+        ScrollOut({
+            threshold: 1
+        });
+
+
+
+                
+
+ 
         </script>
+
+        
     </main>
 </body>
 </html>

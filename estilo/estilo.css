@@ -33,8 +33,13 @@
     src: url('../fonts/SFPRODISPLAYULTRALIGHTITALIC.OTF') format('truetype');
 }
 
+@font-face {
+    font-family: "SFPRODISPLAYLIGHT";
+    src: url('../fonts/SFPRODISPLAYLIGHT.ttf') format('truetype');
+}
+
 :root{
-    --azul-texto: #0066cc;
+    --azul-texto: #1777d8;
     --preto-texto: #1d1d1f;
     --branco-fundo: #FBFBFD;
 
@@ -43,23 +48,24 @@
     --font-apple-bold: 'SFPROBOLD';
     --font-apple-light-italic: 'SFPROLIGHTITALIC';
     --font-apple-medium: 'SFPROMEDIUM';
-    --font-apple-ultra-light-italic: 'SFPRODISPLAYULTRALIGHTITALIC'
+    --font-apple-ultra-light-italic: 'SFPRODISPLAYULTRALIGHTITALIC';
+    --font-apple-light: 'SFPRODISPLAYLIGHT';
     
 }
-
 
 
 #nav{
     display: flex;
     color: #c9c9c9;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     background-color: #1d1d1f;
     opacity: 95%;
-    padding: 13px 135px 13px 135px;
+    padding: 12px 0 12px 0px;
     position: fixed;
-    width: 80%;
+    width: 100vw;
     z-index: 2;
+    cursor: pointer;
 
     transition-property: all;
     transition-duration: 1s;
@@ -68,15 +74,19 @@
 
 #nav:hover{
     background-color: #0e0e0e;
-    color: #dfdede;
-    text-shadow: 0 0 1px #fff;
-    opacity: 80%;
+    opacity: 90%;
+}
+
+
+#nav > div {
+    margin: 0 45px 0 0;
 }
 
 .item-nav{
-    font-size: 13px;
-    font-family: var(--font-apple);
+    font-size: 0.79em;
+    font-family: var(--font-apple-light);
     font-weight: 100;
+    letter-spacing: -0.12px;
 }
 
 .item-nav:hover{
@@ -84,15 +94,31 @@
 }
 
 .img-nav{
-    max-width: 20px;
-    max-height: 20px;
-   
+    width: 20px;
+    height: 20px;
+    padding: 0 20px 0 0;
 }
+
+#nav-logo{
+    width: 20px;
+    height: 20px;
+    background-image: url("../Imagens/logo-apple.png");
+    background-repeat: no-repeat;
+
+    transition: background-image;
+    transition-duration: 1s;
+}
+
+#nav-logo:hover{
+    width: 20px;
+    height: 20px;
+    background-image: url("../Imagens/logo-apple-white.png");
+}
+
 
 .img-nav:hover{
     filter: drop-shadow( 1px 1px 1px
       rgba(255, 255, 255, 0.5));
-}
 }
 
 main {
@@ -135,23 +161,22 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 600px;
+    height: 550px;
     background-color: var(--branco-fundo);
     padding: 100px 0 0 0;
-    border-bottom: 12px solid white;
 }
 
 #iphone > h1{
     font-family: var(--font-apple);
     color: var(--preto-texto);
-    font-size: 52px;
+    font-size: 3.5em;
 }
 
 #iphone > h2{
-    font-family: var(--font-apple);
-    font-weight: 200;
+    font-family: var(--font-apple-light);
+    font-weight: 500;
     color: var(--preto-texto);
-    font-size: 25px;
+    font-size: 1.8em;
 }
 
 #iphone > section{
@@ -162,40 +187,29 @@ main {
     
 }
 
-#iphone > section > p{
-    margin: 15px 0 0 20px;
+.options{
+    margin: 15px 0 0 0;
     color: var(--azul-texto);
     font-family: var(--font-apple);
-    font-size: 23px;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: row;
+}
+
+#iphone > section > p{
+    margin: 0 20px 0 0;
 }
 
 #iphone-img{
     display: flex;
     position: relative;
-    left: 45px;
-
-
 }
 
 #iphone-img1{
-    width: 600x;
-    height: 450px;
-    margin: 30px 0 0 0;
-    position: absolute;
-    z-index: 0;
+    width: 528px;
+    height: 378px;
 
 }
-
-#iphone-img2{
-    width: 600x;
-    height: 450px;
-    margin: 30px 0 0 0;
-    position: relative;
-    z-index: 1;
-
-}
-
-
 
 #iphone > span{
     width: 100%;
@@ -208,11 +222,11 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 624px;
+    height: 500px;
     background-color: var(--branco-fundo);
     align-items: center;
     font-family: var(--font-apple);
-    padding: 100px 0 0px 0;
+    padding: 40px 0 0 0;
     border-bottom: 12px solid white;
 }
 
@@ -226,7 +240,7 @@ main {
 
 
 #iphone-se{
-    font-size: 20px;
+    font-size: 0.5em;
     padding: 1px 2px 1px 1px;
     border: 3px solid var(--preto-texto);
     border-radius: 10px;
@@ -235,22 +249,22 @@ main {
 }
 
 #new-iphone-img{
-    width: 500px;
-    height: 500px;
-    margin: 45px 0 0 0;
+    width: 706px;
+    height: 271px;
+    margin: 60px 0 0 0;
 
 }
 
 .new-iphone > h1 {
     font-family: var(--font-apple);
     color: var(--preto-texto);
-    font-size: 52px;
+    font-size: 3.5em;
 }
 
 .new-iphone > p{
-    font-family: var(--font-apple);
+    font-family: var(--font-apple-light);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 200;
+    font-weight: 500;
     color: var(--preto-texto);
     font-size: 20px;
 }
@@ -263,10 +277,6 @@ main {
 
 .new-iphone > section > p{
     margin: 15px 0 0 20px;
-    color: var(--azul-texto);
-    font-family: var(--font-apple);
-    font-size: 23px;
-    font-weight: 200;
 }
 
 
@@ -323,10 +333,6 @@ main {
 
 #studio-display > div > p{
     margin: 15px 0 0 20px;
-    color: var(--azul-texto);
-    font-family: var(--font-apple);
-    font-size: 20px;
-    font-weight: 100;
 }
 
 #ipad {
@@ -342,10 +348,20 @@ main {
     padding: 30px 0 0 0;
 }
 
-#ipad > img{
+#ipad-img{
     width: 340px;
     height: 356px;
+    margin: 13px 0 0 0;
     z-index: 0;
+
+    transition-property: all;
+    transition-duration: 10s;
+    transition-timing-function: ease;
+    transition-delay: 0.3s;
+}
+
+#ipad-img:hover{
+    transform: rotate(360deg);
 }
 
 #ipad > h1 {
@@ -384,14 +400,7 @@ main {
 }
 
 #ipad > div {
-    color: var(--azul-texto);
-    display: flex;
-    flex-direction: row;
-    font-family: var(--font-apple-light-italic);
-    font-size: 20px;
-    font-weight: 100;
     margin: 0 0 10px 0;
-
 }
 
 #ipad > div > p{
@@ -443,12 +452,6 @@ main {
 }
 
 #fit-apple > div{
-color: var(--azul-texto);
-display: flex;
-flex-direction: row;
-font-family: var(--font-apple);
-font-size: 20px;
-font-weight: 100;
 margin: 10px 0 0 10px;
 }
 
@@ -499,12 +502,6 @@ margin: 0 20px 0 0;
 }
 
 #apple-watch > div {
-    color: var(--azul-texto);
-    display: flex;
-    flex-direction: row;
-    font-family: var(--font-apple);
-    font-size: 20px;
-    font-weight: 100;
     margin: 10px 0 0 10px;
 }
 

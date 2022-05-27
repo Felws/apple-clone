@@ -44,28 +44,54 @@
     --branco-fundo: #FBFBFD;
 
     --font-family: 'Source Sans Pro', sans-serif;
-    --font-apple: 'SFPRO';
-    --font-apple-bold: 'SFPROBOLD';
-    --font-apple-light-italic: 'SFPROLIGHTITALIC';
-    --font-apple-medium: 'SFPROMEDIUM';
-    --font-apple-ultra-light-italic: 'SFPRODISPLAYULTRALIGHTITALIC';
-    --font-apple-light: 'SFPRODISPLAYLIGHT';
+    --font-apple: 'SFPRO', sans-serif;
+    --font-apple-bold: 'SFPROBOLD', sans-serif;
+    --font-apple-light-italic: 'SFPROLIGHTITALIC', sans-serif;
+    --font-apple-medium: 'SFPROMEDIUM', sans-serif;
+    --font-apple-ultra-light-italic: 'SFPRODISPLAYULTRALIGHTITALIC', sans-serif;
+    --font-apple-light: 'SFPRODISPLAYLIGHT', sans-serif;
     
 }
+
+@media (max-width: 800px) {
+    .row{
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .row > img{
+        width: 30px;
+    }
+    #studio-display{
+        width: 100vw;
+        height: auto;
+    }
+    .row2{
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .row3{
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    
+  }
+
 
 
 #nav{
     display: flex;
-    color: #c9c9c9;
-    align-items: center;
     justify-content: center;
+    color: #c9c9c9;
     background-color: #1d1d1f;
     opacity: 95%;
-    padding: 12px 0 12px 0px;
     position: fixed;
     width: 100vw;
     z-index: 2;
     cursor: pointer;
+    padding: 13px 10px 13px 10px;
 
     transition-property: all;
     transition-duration: 1s;
@@ -78,8 +104,18 @@
 }
 
 
-#nav > div {
-    margin: 0 45px 0 0;
+#nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-list > ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+
 }
 
 .item-nav{
@@ -87,16 +123,23 @@
     font-family: var(--font-apple-light);
     font-weight: 100;
     letter-spacing: -0.12px;
+    list-style: none;
+    margin: 0 25px 0 25px;
 }
 
 .item-nav:hover{
     color: white;
 }
 
-.img-nav{
+#img-nav{
     width: 20px;
     height: 20px;
-    padding: 0 20px 0 0;
+    padding: 0 25px 0 25px;
+}
+
+.img-nav:hover{
+    filter: drop-shadow( 1px 1px 1px
+      rgba(255, 255, 255, 0.5));
 }
 
 #nav-logo{
@@ -116,9 +159,58 @@
 }
 
 
-.img-nav:hover{
-    filter: drop-shadow( 1px 1px 1px
-      rgba(255, 255, 255, 0.5));
+
+
+        /* Menu Responsivo */
+
+#mobile-menu-icon{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+@media screen and (max-width:900px){
+    .nav{
+        padding: 1.5rem 4rem;
+    }
+
+    .item-nav{
+        display: none;
+    }
+
+    #mobile-menu-icon{
+        display: flex;
+        position: relative;
+        left: 0;
+    }
+
+    #mobile-menu-icon button{
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 0 1rem 0;
+    }
+
+    .mobile-menu .item-nav{
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    #img-nav{
+        display: none;
+    }
+
+    .open{
+        display: block;
+    }
+
 }
 
 main {
@@ -156,6 +248,15 @@ main {
 
 */
 
+.options{
+    margin: 15px 0 0 0;
+    color: var(--azul-texto);
+    font-family: var(--font-apple);
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: row;
+}
+
 #iphone{
     display: flex;
     flex-direction: column;
@@ -166,15 +267,15 @@ main {
     padding: 100px 0 0 0;
 }
 
-#iphone > h1{
+#iphone > h2{
     font-family: var(--font-apple);
     color: var(--preto-texto);
     font-size: 3.5em;
 }
 
-#iphone > h2{
+#iphone > h3{
     font-family: var(--font-apple-light);
-    font-weight: 500;
+    font-weight: 400;
     color: var(--preto-texto);
     font-size: 1.8em;
 }
@@ -187,17 +288,9 @@ main {
     
 }
 
-.options{
-    margin: 15px 0 0 0;
-    color: var(--azul-texto);
-    font-family: var(--font-apple);
-    font-size: 1.3em;
-    display: flex;
-    flex-direction: row;
-}
-
 #iphone > section > p{
     margin: 0 20px 0 0;
+    z-index: 1;
 }
 
 #iphone-img{
@@ -208,6 +301,7 @@ main {
 #iphone-img1{
     width: 528px;
     height: 378px;
+    z-index: 0;
 
 }
 
@@ -226,47 +320,49 @@ main {
     background-color: var(--branco-fundo);
     align-items: center;
     font-family: var(--font-apple);
-    padding: 40px 0 0 0;
+    padding: 0px 0 2em 0;
     border-bottom: 12px solid white;
 }
 
-.new-iphone h2{
-    font-family: var(--font-apple-bold);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 200;
+.new-iphone h3{
+    font-family: var(--font-apple);
+    font-weight: 600;
     color: var(--preto-texto);
-    font-size: 22px;
+    font-size: 1.25em;
+    word-spacing: -4px;
 }
 
 
 #iphone-se{
-    font-size: 0.5em;
-    padding: 1px 2px 1px 1px;
-    border: 3px solid var(--preto-texto);
-    border-radius: 10px;
+    font-size: 0.45em;
+    font-family: var(--font-apple-bold);
+    padding: 3px 3px 3px 3px;
+    border: 0.2em solid var(--preto-texto);
+    border-radius: 0.45em;
     position: relative;
     bottom: 8px;
 }
 
 #new-iphone-img{
-    width: 706px;
-    height: 271px;
-    margin: 60px 0 0 0;
+    width: 790px;
+    height: 308px;
+    margin: 30px 0 0 0;
 
 }
 
-.new-iphone > h1 {
+.new-iphone > h2 {
     font-family: var(--font-apple);
     color: var(--preto-texto);
-    font-size: 3.5em;
+    font-size: 3.45em;
 }
 
 .new-iphone > p{
     font-family: var(--font-apple-light);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     color: var(--preto-texto);
-    font-size: 20px;
+    font-size: 1.7em;
+    letter-spacing: -1.5px;
 }
 
 .new-iphone > section{
@@ -276,9 +372,13 @@ main {
 }
 
 .new-iphone > section > p{
-    margin: 15px 0 0 20px;
+    margin: 0.3em 2em 0 0;
 }
 
+#mosaico{
+    display: flex;
+    flex-direction: column;
+}
 
 .row{
     display: flex;
@@ -308,7 +408,7 @@ main {
 
 }
 
-#studio-display > h1{
+#studio-display > h2{
     font-family: var(--font-apple-bold);
     color: #1D1D1F;
     font-size: 40px;
@@ -316,7 +416,7 @@ main {
 
 }
 
-#studio-display > h2{
+#studio-display > h3{
     font-family: var(--font-apple);
     color: #1D1D1F;
     font-size: 20px;
@@ -364,7 +464,7 @@ main {
     transform: rotate(360deg);
 }
 
-#ipad > h1 {
+#ipad > h2 {
     color: white;
     z-index: 1;
     justify-content: center;
@@ -375,7 +475,7 @@ main {
     top: -30px;   
 }
 
-#ipad > h1 > span {
+#ipad > h2 > span {
     color: white;
     z-index: 1;
     justify-content: center;
@@ -387,7 +487,7 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
-#ipad > h2 {
+#ipad > h3 {
     color: white;
     z-index: 1;
     justify-content: center;
@@ -405,8 +505,9 @@ main {
 
 #ipad > div > p{
     margin: 0 20px 0 0;
-
 }
+
+
 
 .row2{
     display: flex;
@@ -420,7 +521,6 @@ main {
 #fit-apple{
     width: 50%;
     height: auto;
-    background-color: blue;
     border-right: 12px solid white;
     display: flex;
     flex-direction: column;
@@ -436,7 +536,7 @@ main {
     
 }
 
-#fit-apple > h1{
+#fit-apple > h2{
     font-family: var(--font-apple);
     font-size: 40px;
     font-weight: 600;
@@ -463,7 +563,7 @@ margin: 0 20px 0 0;
 #apple-watch{
     width: 50%;
     height: auto;
-    background-color: #F1F1F1;
+    background-color: #F4F4F6;
     border-right: 12px solid white;
     display: flex;
     flex-direction: column;
@@ -474,19 +574,19 @@ margin: 0 20px 0 0;
 }
 
 #apple-watch-img1 {
-    width: 400px;
-    height: 374px;
-    z-index: 1;
+    width: 450px;
+    height: 364px;
+    margin: 5px 0 0 0;
 }
 
 
-#apple-watch > h1 {
+#apple-watch > h2 {
     font-size: 36px;
     font-family: var(--font-apple-bold);
     color: #1D1D1F;
 }
 
-#apple-watch > h2 {
+#apple-watch > h3 {
     font-family: var(--font-apple);
     color: #1D1D1F;
     font-size: 20px;
@@ -494,7 +594,7 @@ margin: 0 20px 0 0;
     margin: 10px 0 0 0;
 }
 
-#apple-watch > h3 {
+#apple-watch > h4 {
     font-size: 16px;
     font-family: var(--font-apple-bold);
     color: #CC2127;
@@ -507,4 +607,63 @@ margin: 0 20px 0 0;
 
 #apple-watch > div > p{
     margin: 0 20px 0 0;
+}
+
+.row3{
+    display: flex;
+    flex-direction: row;
+    width: 97.9vw;
+    height: 560px;
+    border-bottom: 12px solid white;
+    border-left: 12px solid white;
+}
+
+#WWDC{
+    width: 50%;
+    height: auto;
+    border-right: 12px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 40px 0 0 0;
+}
+
+#WWDC > h2{
+    color: #c6e1e6;
+    justify-content: center;
+    font-family: var(--font-apple);
+    font-size: 40px;
+    font-weight: 600;
+    position: relative;
+    top: -30px;
+}
+
+#WWDC > p{
+    color: #c6e1e6;
+    justify-content: center;
+    font-family: var(--font-apple-light);
+    font-size: 1.35em;
+    font-weight: 500;
+    position: relative;
+    top: -30px;
+}
+
+#WWDC > img{
+    width: 657px;
+    height: 365px;
+    image-resolution: 500dpi;
+    position: relative;
+    top: -38px;
+    object-fit: contain;
+}
+
+#WWDC > div {
+    color: var(--azul-texto);
+    font-family: var(--font-apple-light);
+    font-size: 1.1em;
+    position: relative;
+    top: -35px;
+   
 }

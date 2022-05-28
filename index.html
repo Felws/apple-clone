@@ -7,22 +7,22 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="estilo/estilo.css">
     <script src='javascript/script.js'></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <link rel="icon" type="images/x-icon" href="/Imagens/logo-apple.svg">
+    <link id="favicon" rel="icon" type="images/x-icon" href="/Imagens/apple.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header >
         <nav id="nav">
-            <div id="mobile-menu-icon">
-                <button onclick="menuShow()"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                  </svg></button>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
             </div>
-            <div id="nav-list">
+            <div>
                 <div id="nav-logo">
                 </div>
-                <ul>
+                <ul class="nav-list">
                     <li class="item-nav"> Loja </li>
                     <li class="item-nav"> Mac</li>
                     <li class="item-nav"> iPad</li>
@@ -58,9 +58,6 @@
                 </ul>
             </div>
         </nav>
-    </header>
-
-
 
 <!-- Div UNICEF 
 <div class="unicef">
@@ -215,7 +212,38 @@
 
 
 
-                
+    const navSlide= () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-list');
+    const navList = document.querySelectorAll('.nav-list li');
+    // const navLinks = document.querySelectorAll('.nav-list li');
+
+    burger.addEventListener('click', () => {
+            // Toggle Nov
+            nav.classList.toggle('nav-active');
+            // Animate Links
+            navList.forEach((link , index ) => {
+                if (link.style.animation){
+                    link.style.animation = "";
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 3 }s`;
+                }
+            });
+
+            burger.classList.toggle('toggle');
+        });
+    }
+
+
+
+
+
+
+    navSlide();
+
+
+
+
 
  
         </script>

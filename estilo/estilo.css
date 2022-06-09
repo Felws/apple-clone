@@ -4,6 +4,15 @@
     scroll-behavior: smooth;
 }
 
+html{
+    /* 1 rem equivale a 10px */
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
@@ -389,276 +398,7 @@ nav .desktop-nav li a:hover {
 }
 
 
-/* Media Queries */
 
-@media (max-width: 1100px) {
-    .nav-container nav {
-        width: 100%;
-        padding: 0 32px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .nav-container .desktop-nav {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0vh;
-        background: #000;
-        justify-content: start;
-        overflow: hidden;
-        z-index: -1;
-        transition: all 1000ms ease;
-    }
-
-    .nav-container.active .desktop-nav {
-        height: 100vh;
-    }
-
-    .nav-container .desktop-nav li {
-        width: 80%;
-        padding: 0 32px;
-    }
-
-    .nav-container .desktop-nav li:first-child {
-        margin-top: 120px;
-    }
-
-    .nav-container .desktop-nav .link-logo,
-    .nav-container .desktop-nav .link-search,
-    .nav-container .desktop-nav .link-bag {
-        display: none;
-    }
-
-    .nav-container .desktop-nav li a {
-        padding: 16px 0;
-        display: inline-block;
-        border-bottom: 1px solid #616161;
-        width: 100%;
-        font-size: 17px;
-        transform: translateY(-80px);
-        opacity: 0;
-        transition: all 700ms ease;
-    }
-
-    .nav-container.active .desktop-nav li a {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    /* Mobile Nav */
-
-    nav .mobile-nav {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        list-style: none;
-    }
-
-    nav .menu-icon-container {
-        width: 20px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    nav .menu-icon {
-        position: relative;
-        width: 100%;
-    }
-
-    nav .menu-icon .line-1,
-    nav .menu-icon .line-2 {
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        background: #fff;
-        transition-property: transform, top;
-        transition-delay: 0ms, 160ms;
-        transition-duration: 200ms;
-    }
-
-    nav .menu-icon .line-1 {
-        top: -4px;
-    }
-
-    nav .menu-icon .line-2 {
-        top: 4px;
-    }
-
-    .nav-container.active nav .menu-icon-container .menu-icon .line-1 {
-        top: 0;
-        transform: rotateZ(45deg);
-        transition-property: top, transform;
-        transition-delay: 0ms, 160ms;
-        transition-duration: 200ms;
-    }
-
-    .nav-container.active nav .menu-icon-container .menu-icon .line-2 {
-        top: 0;
-        transform: rotateZ(-45deg);
-        transition-property: top, transform;
-        transition-delay: 0ms, 160ms;
-        transition-duration: 200ms;
-    }
-
-    /* Bag Icon Animation */
-
-    .nav-container.active .mobile-nav .link-bag {
-        transform: translateY(8px);
-        opacity: 0;
-        pointer-events: none;
-
-    }
-
-    .nav-container .mobile-nav .link-bag {
-        transition: all 1000ms ease;
-    }
-
-
-
-    /* Search Box */
-
-    .mobile-search-container input {
-        width: 100%;
-        padding: 12px 36px;
-        font-family: var(--font-apple);
-        font-size: 17px;
-        background: #1b1b1b;
-        border: 0;
-        color: #fff;
-        border-radius: 8px;
-        outline: none;
-    }
-
-    .mobile-search-container {
-        position: relative;
-        padding: 0 16px;
-        margin-top: -30px;
-        border-bottom: 1px solid #616161;
-        display: flex;
-        padding-bottom: 16px;
-        align-items: center;
-        transform: rotateX(90deg);
-        opacity: 0;
-        transition: all 600ms ease;
-    }
-
-    .nav-container.active .mobile-search-container {
-        transform: rotateX(0deg);
-        margin-top: 10px;
-        opacity: 1;
-    }
-
-    .mobile-search-container .link-search {
-        position: absolute;
-        left: 24px;
-        opacity: .5;
-        background-size: 15px;
-    }
-
-    /* Nav Move Up */
-
-    .nav-container nav.move-up {
-        margin-top: -40px;
-    }
-
-    /* Cancel Button */
-
-    .mobile-search-container .cancel-btn {
-        color: #2997ff;
-        font-size: 17px;
-        font-weight: 400;
-        cursor: pointer;
-        width: 0px;
-        overflow: hidden;
-        transition: all 400ms ease;
-    }
-
-    .mobile-search-container .search-bar.active + .cancel-btn {
-        padding: 0 16px;
-        width: 74px;
-    }
-
-    .mobile-search-container .search-bar {
-        flex: 1;
-    }
-
-    /* Desktop Nav Move Down */
-
-    nav .desktop-nav.move-down li:first-child {
-        margin-top: 150px;
-    }
-
-    nav .desktop-nav.move-down li {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    
-    /* Quick Links */
-
-    .mobile-search-container .search-bar.active ~ .quick-links {
-        top: 80px;
-        opacity: 1;
-        pointer-events: auto;
-        transition-delay: 40ms;
-    }
-
-    .mobile-search-container .quick-links {
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding: 0 32px;
-        opacity: 0;
-        pointer-events: none;
-        top: 10px;
-        transition: all 400ms ease;
-    }
-
-    .mobile-search-container .quick-links ul {
-        list-style: none;
-    }
-
-    .mobile-search-container .quick-links h2 {
-        color: #86868b;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-
-    .mobile-search-container .quick-links ul li a {
-        padding: 16px 0;
-        display: inline-block;
-        text-decoration: none;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 400;
-        border-bottom: 1px solid #616161;
-        width: 100%;
-    }
-
-    .mobile-search-container .quick-links ul li a:hover {
-        color: #2997ff;
-    }
-
-    /* Nav Animation */
-
-    .nav-container nav {
-        transition: all 400ms ease;
-    }
-
-    .iphone-img1{
-        background-image: url("../images/iPhone_13_responsive.png");
-        width: 528px;
-        height: 378px;
-        transition: all 400ms ease;
-    }
-}
 
 
 input,
@@ -697,38 +437,72 @@ a {
     color: var(--azul-texto);
 } */
 
+/* Studio Display */
+#mosaico tr td:nth-child(1){
+    order: 1;
+}
 
+/* Ipad Air */
+#mosaico tr td:nth-child(2){
+    order: 4;
+}
+
+/* Fitness + */
+#mosaico tr td:nth-child(3){
+    order: 3;
+}
+
+/* Apple Watch */
+#mosaico tr td:nth-child(4){
+    order: 2;
+}
+
+/* WWDC 2022 */
+#mosaico tr td:nth-child(5){
+    order: 2;
+}
+
+
+#mosaico tr td:nth-child(6){
+    order: 6;
+}
 
 .options{
     margin: 15px 0 0 0;
     color: var(--azul-texto);
     font-family: var(--font-apple);
-    font-size: 1.3em;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+/* ------------------------- Iphone Container ----------------------------*/
 #iphone{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 550px;
     background-color: var(--branco-fundo);
-    padding: 100px 0 0 0;
+    padding: 8rem 0 0 0;
 }
 
 #iphone > h2{
     font-family: var(--font-apple);
     color: var(--preto-texto);
-    font-size: 3.5em;
+    font-size: 5.5rem;
 }
 
 #iphone > h3{
     font-family: var(--font-apple-light);
     font-weight: 400;
     color: var(--preto-texto);
-    font-size: 1.8em;
+    font-size: 3rem;
 }
 
 #iphone > section{
@@ -740,7 +514,7 @@ a {
 }
 
 #iphone > section > p{
-    margin: 0 20px 0 0;
+    margin: 0 1.5rem 0 0;
     z-index: 1;
 }
 
@@ -750,31 +524,27 @@ a {
 }
 
 .iphone-img1{
-    background-image: url("../images/iphone-13.png");
     width: 528px;
     height: 378px;
     z-index: 0;
-    outline-color: #ffff;
-    background-repeat: no-repeat;
+    
 
 }
 
 #iphone > span{
     width: 100%;
-    height: 15px;
+    height: 1rem;
     background-color: white;
 }
 
-
+/* ----------------------- New Iphone ------------------------------*/
 .new-iphone{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 500px;
     background-color: var(--branco-fundo);
     align-items: center;
     font-family: var(--font-apple);
-    padding: 0px 0 2em 0;
+    padding: 0px 0 1em 0;
     border-bottom: 12px solid white;
 }
 
@@ -782,13 +552,13 @@ a {
     font-family: var(--font-apple);
     font-weight: 600;
     color: var(--preto-texto);
-    font-size: 1.25em;
+    font-size: 2rem;
     word-spacing: -4px;
 }
 
 
 #iphone-se{
-    font-size: 0.45em;
+    font-size: 2rem;
     font-family: var(--font-apple-bold);
     padding: 3px 3px 3px 3px;
     border: 0.2em solid var(--preto-texto);
@@ -798,16 +568,21 @@ a {
 }
 
 #new-iphone-img{
-    width: 790px;
-    height: 308px;
+    width: 79rem;
+    height: 30.8rem;
     margin: 30px 0 0 0;
 
 }
 
+/* #new-iphone-img-responsive{
+    width: 40rem;
+    height: 22.4rem;
+} */
+
 .new-iphone > h2 {
     font-family: var(--font-apple);
     color: var(--preto-texto);
-    font-size: 3.45em;
+    font-size: 5.5rem;
 }
 
 .new-iphone > p{
@@ -815,7 +590,7 @@ a {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 300;
     color: var(--preto-texto);
-    font-size: 1.7em;
+    font-size: 2.5rem;
     letter-spacing: -1.5px;
 }
 
@@ -825,92 +600,43 @@ a {
 
 }
 
-.new-iphone > section > p{
-    margin: 0.3em 2em 0 0;
+.new-iphone > div > p{
+    margin: 1rem 2rem 0 0;
 }
 
-#mosaico{
+/*--------------------------- Ipad Container ------------------------------*/
+
+.ipad-container{
     display: flex;
-    flex-direction: column;
-    width: 97.9vw;
-    height: auto;
-    border-bottom: 12px solid white;
-    border-left: 12px solid white;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-    width: 97.9vw;
-    height: 560px;
-    border-bottom: 12px solid white;
-    border-left: 12px solid white;
-} 
-
-
-#studio-display{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background-color: var(--branco-fundo);
-    justify-content: center;
-    align-items: center;
-    border-right: 12px solid white;
-    padding: 30px 0 0 0;
-}
-
-#studio-display > img{
-    width: 450px;
-    height: 346px;
-    margin: 50px 0 0 0;
-
-}
-
-#studio-display > h2{
-    font-family: var(--font-apple-bold);
-    color: #1D1D1F;
-    font-size: 40px;
-    font-weight: 500;
-
-}
-
-#studio-display > h3{
-    font-family: var(--font-apple);
-    color: #1D1D1F;
-    font-size: 20px;
-    font-weight: 100;
-
-}
-
-#studio-display > div{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-}
-
-#studio-display > div > p{
-    margin: 15px 0 0 20px;
-}
-
-#ipad {
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+    height: 95vh;
     justify-content: center;
     align-items: center;
     background-color: black;
-    z-index: 1;
-    border-right: 12px solid white;
-    padding: 30px 0 0 0;
+    border-bottom: 12px solid #fff;;
 }
 
-#ipad-img{
-    width: 340px;
-    height: 356px;
-    margin: 13px 0 0 0;
-    z-index: 0;
+.ipad-container tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ipad-container tr td{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ipad-logo{
+    width: 22rem;
+    height: 6rem;
+}
+
+ #ipad-big-img{
+    width: 52.1rem;
+    height: 54rem;
+    margin: 0 0 0 6em;
 
     transition-property: all;
     transition-duration: 10s;
@@ -918,128 +644,186 @@ a {
     transition-delay: 0.3s;
 }
 
-#ipad-img:hover{
+#ipad-big-img:hover{
     transform: rotate(360deg);
 }
 
-#ipad > h2 {
+
+.ipad-container h3 {
     color: white;
-    z-index: 1;
     justify-content: center;
     font-family: var(--font-apple);
-    font-size: 40px;
-    font-weight: 300;
-    position: relative;
-    top: -30px;   
-}
-
-#ipad > h2 > span {
-    color: white;
-    z-index: 1;
-    justify-content: center;
-    position: relative;
-    font-family: var(--font-apple-light-italic);
-    font-size: 40px;
-    background: -webkit-linear-gradient(#46388d, #eee );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#ipad > h3 {
-    color: white;
-    z-index: 1;
-    justify-content: center;
-    font-family: var(--font-apple);
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: 100;
-    position: relative;
-    top: -20px;
+    margin: 0.6rem 0 0 0.2rem;
 
 }
 
-#ipad > div {
-    margin: 0 0 10px 0;
+.ipad-container div {
+    margin: 1rem 0 1rem 0;
 }
 
-#ipad > div > p{
-    margin: 0 20px 0 0;
+.ipad-container div p{
+    margin: 0 1rem 0 0;
 }
 
+/* ----------- Mosaico Container -------------------*/
 
+.mosaico{
+    display: flex;
+    flex-direction: column;
+    width: 97.9vw;
+    height: auto;
+    border-bottom: 12px solid white;
+}
 
-.row2{
+.mosaico tr{
     display: flex;
     flex-direction: row;
-    width: 97.9vw;
-    height: 560px;
     border-bottom: 12px solid white;
     border-left: 12px solid white;
 }
 
-.fit-apple{
-    width: 50%;
-    height: auto;
-    border-right: 12px solid white;
+.mosaico tr td{
     display: flex;
     flex-direction: column;
+    flex-direction: center;
     align-items: center;
+    width: 50%;
+    height: 90vh;
+}
+
+/* -----------------------Studio Display Container------------------- */
+
+.studio-display{
+    background-color: var(--branco-fundo);
+    border-right: 12px solid white;
+    padding: 3rem 0 0 0;
+}
+
+.studio-display > img{
+    width: 45rem;
+    height: 34.6rem;
+    margin: 50px 0 0 0;
+
+}
+
+.studio-display > h2{
+    font-family: var(--font-apple-bold);
+    color: #1D1D1F;
+    font-size: 5rem;
+    font-weight: 500;
+
+}
+
+.studio-display > h3{
+    font-family: var(--font-apple);
+    color: #1D1D1F;
+    font-size: 2.5rem;
+    font-weight: 100;
+
+}
+
+.studio-display > div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     justify-content: center;
+}
+
+.studio-display > div > p{
+    margin: 1.5rem 0 0 2rem;
+}
+
+/* -------------- Airpad Mosaico ---------------*/
+
+.airpad {
+    background-color: #f7f5f7;
+    z-index: 1;
+    border-right: 12px solid white;
+    padding: 3rem 0 0 0;
+}
+
+.airpad > img{
+    width: 30rem;
+    height: 41.2rem;
+    position: relative;
+    top: -2.7rem;
+}
+
+
+
+.airpad > h3 {
+    color: var(--preto-texto);
+    justify-content: center;
+    font-family: var(--font-apple);
+    font-size: 2.5rem;
+    font-weight: 100;
+
+}
+
+.airpad > div {
+    margin: 0 0 1rem 0;
+}
+
+.airpad > div > p{
+    margin: 0 2rem 0 0;
+}
+
+
+/* ------------- FITNESS + CONTAINER -------------*/
+
+.fit-apple{
+    border-right: 12px solid white;
     background-color: #E6E6E6;
-    padding: 40px 0 0 0;
+    padding: 4rem 0 0 0;
 }
 
 .fit-apple > img{
-    width: 450px;
-    height: 382px;
+    width: 45rem;
+    height: 38.2rem;
     
 }
 
 .fit-apple > h2{
     font-family: var(--font-apple);
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 600;
 }
 
 .fit-apple > p{
     font-family: var(--font-apple);
     color: #1D1D1F;
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: 100;
-    word-wrap: 
 
 }
 
 .fit-apple > div{
-margin: 10px 0 0 10px;
+margin: 1rem 0 0 1rem;
 }
 
 .fit-apple > div > p{
-margin: 0 20px 0 0;
+margin: 0 2rem 0 0;
 }
 
+/* --------------- APPLE WATCH CONTAINER ------------------------ */
 
 .apple-watch{
-    width: 50%;
-    height: auto;
     background-color: #F4F4F6;
-    border-right: 12px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0 0 0;
+    padding: 4rem 0 0 0;
 
 }
 
-.apple-watch-img1 {
-    width: 100%;
-    height: 364px;
-    margin: 5px 0 0 0;
+.apple-watch img{
+    padding: 0.7rem 0 0 0;
+    width: 45rem;
+    height: 42.1rem;
 }
 
 
 .apple-watch > h2 {
-    font-size: 36px;
+    font-size: 4rem;
     font-family: var(--font-apple-bold);
     color: #1D1D1F;
 }
@@ -1047,81 +831,102 @@ margin: 0 20px 0 0;
 .apple-watch > h3 {
     font-family: var(--font-apple);
     color: #1D1D1F;
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: 100;
     margin: 10px 0 0 0;
 }
 
 .apple-watch > h4 {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-family: var(--font-apple-bold);
     color: #CC2127;
     font-weight: 200;
 }
 
 .apple-watch > div {
-    margin: 10px 0 0 10px;
+    margin: 1rem 0 0 1rem;
 }
 
 .apple-watch > div > p{
-    margin: 0 20px 0 0;
+    margin: 0 2rem 0 0;
 }
 
- .row3{
-    display: flex;
-    flex-direction: row;
-    width: 97.9vw;
-    height: 560px;
-    border-bottom: 12px solid white;
-    border-left: 12px solid white;
-}
+/* -----------------------WWDC CONTAINER --------------------*/
 
-#WWDC{
-    width: 50%;
-    height: auto;
+.WWDC{
     border-right: 12px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    padding: 40px 0 0 0;
+    background-image: linear-gradient(#252A3D,#000000,  #000000);
+    padding-top: 2rem;
+    width: 50%; 
 }
 
-#WWDC > h2{
+.WWDC h2{
     color: #c6e1e6;
     justify-content: center;
     font-family: var(--font-apple);
-    font-size: 2.4em;
+    font-size: 5rem;
     font-weight: 600;
     position: relative;
-    top: -30px;
+    top: -1.3px;
 }
 
-#WWDC > p{
+.WWDC  p{
     color: #c6e1e6;
     justify-content: center;
     font-family: var(--font-apple-light);
-    font-size: 1.35em;
+    font-size: 2rem;
     font-weight: 500;
     position: relative;
-    top: -30px;
+    top: -1.2px;
 }
 
-#WWDC > img{
-    width: 95%;
-    height: 365px;
-    image-resolution: 500dpi;
-    position: relative;
-    top: -38px;
+.WWDC  img{
+    width: 100%;
+    height: auto;
     object-fit: contain;
+    position: relative;
+    top: -1.1em;
 }
 
-#WWDC > div {
+.WWDC  div  p{
     color: var(--azul-texto);
     font-family: var(--font-apple-light);
-    font-size: 1.1em;
+    font-size: 1.5rem;
     position: relative;
-    top: -35px;
-   
+    top: -1.8px;
 }
+
+
+/* --------------- Watch Pride Bracelete ---------------------------*/
+.watch-pride{
+    background-color: #fafafa;
+    padding: 2.5rem 0 0 0;
+    
+}
+
+.watch-pride h2{
+    font-family: var(--font-apple);
+    color: var(--preto-texto);
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.watch-pride h3{
+    background: url('../images/logo_pride-watch.png');
+    width: 20rem;
+    height: 7.3rem;
+}
+
+.watch-pride p {
+    color: var(--azul-texto);
+    font-family: var(--font-apple-light);
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+.watch-pride > img{
+    width: 55rem;
+    height: 32.1rem;
+    padding: 3rem 0 0 0;
+}
+

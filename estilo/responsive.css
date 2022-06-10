@@ -26,8 +26,8 @@
     }
 
     .ipad-container #ipad-big-img{
-        width: 300px;
-        height: 311px;
+        width: 30rem;
+        height: 31.1rem;
 
         transition: none;
     }
@@ -47,25 +47,37 @@
 
 @media only screen and (max-width : 768px) {
 
-    .mosaico  tr{
+    table.mosaico  tr{
         display: block;
+        border-right: none;
+        border-left: none;
+        margin: none;
+        width: 96.5vw;
+    }
+
+    .studio-display, .fit-apple, .WWDC{
+        border-bottom: 2rem solid white;
 
     }
 
     table.mosaico tr td{
         width: 100%;
         height: auto;
+        border-left: none;
+        margin-right: none;
     }
 
 
     .ipad-container tr{
         flex-direction: column;
         flex-wrap: wrap;
+        height: 70vh;
     }
 
     .ipad-container #ipad-big-img{
         width: 300px;
-        height: 311px;
+        height: 310px;
+        margin: 0 10px 0 0;
 
         transition: none;
     }
@@ -73,11 +85,11 @@
     .new-iphone #new-iphone-img{
         width: 400px;
         height: 224px;
-        padding: 0 0 0 45px;
+        padding: 0 0 0 16px;
     }
 
     html{
-        font-size: 50%;
+        font-size: 60%;
     }
 
     .nav-container .desktop-nav {

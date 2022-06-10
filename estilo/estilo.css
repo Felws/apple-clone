@@ -711,7 +711,7 @@ main{
 .studio-display > h2{
     font-family: var(--font-apple-bold);
     color: #1D1D1F;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 500;
 
 }
@@ -719,7 +719,7 @@ main{
 .studio-display > h3{
     font-family: var(--font-apple);
     color: #1D1D1F;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 100;
 
 }
@@ -732,41 +732,57 @@ main{
 }
 
 .studio-display > div > p{
-    margin: 1.5rem 0 0 2rem;
+    margin: 0 0 0 2rem;
 }
 
 /* -------------- Airpad Mosaico ---------------*/
 
-.airpad {
-    background-color: #f7f5f7;
+.airpods {
+    background-color: #EAEAEA;
     z-index: 1;
     border-right: 12px solid white;
     padding: 3rem 0 0 0;
 }
 
-.airpad > img{
-    width: 30rem;
-    height: 41.2rem;
+.airpods img{
+    width: 31rem;
+    height: 42rem;
     position: relative;
-    top: -2.7rem;
+    top: -3rem;
 }
 
+.airpods section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -1.5rem;
+}
 
-
-.airpad > h3 {
+.airpods section > h2 {
     color: var(--preto-texto);
     justify-content: center;
     font-family: var(--font-apple);
-    font-size: 2.5rem;
+    font-size: 4rem;
+    font-weight: 600;
+    word-spacing: 10px;
+}
+
+
+.airpods section > h3 {
+    color: var(--preto-texto);
+    justify-content: center;
+    font-family: var(--font-apple);
+    font-size: 2rem;
     font-weight: 100;
-
 }
 
-.airpad > div {
-    margin: 0 0 1rem 0;
+.airpods section > div {
+    margin: 1rem 0 1rem 0;
 }
 
-.airpad > div > p{
+.airpods > section >  div > p{
     margin: 0 2rem 0 0;
 }
 
@@ -823,7 +839,7 @@ margin: 0 2rem 0 0;
 
 
 .apple-watch > h2 {
-    font-size: 4rem;
+    font-size: 3.7rem;
     font-family: var(--font-apple-bold);
     color: #1D1D1F;
 }
@@ -915,6 +931,7 @@ margin: 0 2rem 0 0;
     background: url('../images/logo_pride-watch.png');
     width: 20rem;
     height: 7.3rem;
+    background-size: 20rem;
 }
 
 .watch-pride p {
@@ -930,3 +947,38 @@ margin: 0 2rem 0 0;
     padding: 3rem 0 0 0;
 }
 
+footer{
+    background-color: #1D1D1F;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    color: #757575;
+    margin: 2rem 0 0 0;
+}
+
+/* #line{
+    height: 0.2rem;
+    width: 70%;
+    border: 10px solid #757575;
+} */
+
+footer section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer section ul{
+    color: #a09f9f;
+    list-style: none;
+}
+
+footer section ul li{
+    color: #fff;
+    margin: 0 0 1rem 0;
+}

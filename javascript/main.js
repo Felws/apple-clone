@@ -49,3 +49,28 @@ cancelBtn.addEventListener("click", () => {
     nav.classList.remove("move-up");
     desktopNav.classList.remove("move-down");
 })
+
+const listTitle = document.querySelector("footer section ul div.list-items");
+
+document.body.onresize = function() {
+    const button = document.querySelector("li.title button")
+
+    if (document.body.clientWidth <= 768) {
+        button.removeAttribute("disabled");
+        listTitle.classList.add("hide");
+
+    }
+    else {
+        button.setAttribute("disabled", "True")
+    }
+};
+
+const listTitle = document.querySelector("footer section ul div.list-items");
+const tittleButton = document.querySelector("footer li.title button")
+
+tittleButton.addEventListener("click", () => {
+    listTitle.classList.add("show");
+    console.log("it's working")
+})
+
+

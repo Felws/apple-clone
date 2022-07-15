@@ -739,12 +739,12 @@ a {
     margin: 0 0 0 2rem;
 }
 
-/* -------------- Airpad Mosaico ---------------*/
+/* -------------- Airpad container ---------------*/
 
 .airpods {
     background-color: #EAEAEA;
     z-index: 1;
-    border-right: 12px solid white;
+    /* border-right: 12px solid white; */
     padding: 3rem 0 0 0;
 }
 
@@ -878,6 +878,7 @@ margin: 0 2rem 0 0;
     background-image: linear-gradient(#252A3D,#000000,  #000000);
     padding-top: 2rem;
     width: 50%; 
+    margin: 0 0 -1.5rem 0;
 }
 
 .WWDC h2{
@@ -921,6 +922,7 @@ margin: 0 2rem 0 0;
 .watch-pride{
     background-color: #fafafa;
     padding: 2.5rem 0 0 0;
+    margin: 0 0 -1.5rem 0;
     
 }
 
@@ -956,10 +958,11 @@ margin: 0 2rem 0 0;
 footer{
     background-color: #1D1D1F;
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: -4rem 0 4rem 0;
 }
 footer + div{
     width: 55%;
@@ -999,19 +1002,15 @@ footer section ul li{
 }
 
 footer .title{
-    font-family: var(--font-apple-bold);
-}
-
-.footer section ul div.list-items.hide{
-    display: none;
-}
-
-footer .title button{
     background-color: #1D1D1F;
     text-decoration: none;
     border: none;
     color: rgb(199, 199, 199);
     font-family: var(--font-apple-bold);
+}
+
+footer .line-title{
+    display: none;
 }
 
 footer section div ul{
@@ -1023,6 +1022,7 @@ footer #bottom-footer{
     flex-direction: column;
     justify-content: flex-start;
     width: 70%;
+    padding:  0 0 2rem 0;
 }
 
 footer #bottom-footer p{
@@ -1046,3 +1046,4 @@ footer #line-bottom{
 footer  #bottom-footer p:nth-of-type(3){
     color: #fff;
 }
+

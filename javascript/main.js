@@ -50,27 +50,59 @@ cancelBtn.addEventListener("click", () => {
     desktopNav.classList.remove("move-down");
 })
 
-const listTitle = document.querySelector("footer section ul div.list-items");
 
-document.body.onresize = function() {
-    const button = document.querySelector("li.title button")
+// const titleButton = document.querySelectorAll(".title");
+// const listItems = document.querySelectorAll(".list-item li");
 
-    if (document.body.clientWidth <= 768) {
-        button.removeAttribute("disabled");
-        listTitle.classList.add("hide");
+// titleButton.addEventListener("click", () => {
+//     listItems.classList.add("show");
 
+// })
+const titleButton = document.querySelectorAll(".title")
+const listItems = document.querySelectorAll(".list-items")
+
+function sizeScreen() {
+    var altura = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+
+
+    if (altura <= 768) {
+        for (let i = 0; i <= titleButton.length; i++) {
+            titleButton[i].removeAttribute("disabled");
+            }
+        }
+        else {
+            for (let i = 0; i <= titleButton.length; i++) {
+                titleButton[i].setAttribute("disabled", "disabled");
+                }
+            }
     }
-    else {
-        button.setAttribute("disabled", "True")
-    }
-};
 
-const listTitle = document.querySelector("footer section ul div.list-items");
-const tittleButton = document.querySelector("footer li.title button")
+sizeScreen();
 
-tittleButton.addEventListener("click", () => {
-    listTitle.classList.add("show");
-    console.log("it's working")
-})
+const titleButton1 = document.querySelector("#title-1")
+const titleButton2 = document.querySelector("#title-2")
+const titleButton3 = document.querySelector("#title-3")
+const titleButton4 = document.querySelector("#title-4")
+const titleButton5 = document.querySelector("#title-5")
+const titleButton6 = document.querySelector("#title-6")
+const titleButton7 = document.querySelector("#title-7")
+const titleButton8 = document.querySelector("#title-8")
+const titleButton9 = document.querySelector("#title-9")
 
+const listItem1 = document.querySelector("#list-items-1")
+const listItem2 = document.querySelector("#list-items-2")
+const listItem3 = document.querySelector("#list-items-3")
+const listItem4 = document.querySelector("#list-items-4")
+const listItem5 = document.querySelector("#list-items-5")
+const listItem6 = document.querySelector("#list-items-6")
+const listItem7 = document.querySelector("#list-items-7")
+const listItem8 = document.querySelector("#list-items-8")
+const listItem9 = document.querySelector("#list-items-9")
 
+$( "titleButton1" ).click(function() {
+    $( "listItem1" ).toggle( "slow", function() {
+    // Animation complete.
+  });
+});
